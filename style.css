@@ -1,0 +1,240 @@
+/* App theme */
+:root,
+html[data-theme='light'] {
+    --background-color: #d3d6dd;
+    --main-text-color: #060606;
+    --off-text-color: #a9a9ab;
+    --background-container-color: #fff;
+}
+
+html[data-theme='dark'] {
+    --background-color: #575757;
+    --main-text-color: #ffffff;
+    --off-text-color: #a9a9ab;
+    --background-container-color: #060606;
+}
+
+/* :root,
+html {
+    --background-color: #dfdfdf;
+    --main-text-color: #060606;
+    --off-text-color: #a6a6a6;
+    --background-container-color: #fff;
+} */
+
+body {
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* theme-toggle */
+
+nav {
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav i {
+    cursor: pointer;
+}
+
+/* Main container */
+
+#main-container {
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+    background-color: var(--background-container-color);
+    border-radius: 10px;
+    align-items: center;
+}
+
+#main-container>div {
+    margin-top: 10px;
+    width: 90%;
+}
+
+/* Todo input */
+#text-container {
+    display: flex;
+    width: 90%;
+    height: 7vh;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    position: relative;
+}
+
+#text-icon {
+    margin-left: 1rem;
+    font-size: 1.3rem;
+}
+
+#text-input {
+    margin-left: 0.5rem;
+    width: 70%;
+}
+
+#text-input input {
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border: none;
+    width: 100%;
+}
+
+#text-input input:active,
+#text-input input:focus {
+    outline: none;
+}
+
+/* #text-input input:active + #add-icon,
+#text-input input:focus + #add-icon,
+#text-input input:focus + #add-icon {
+    display: block;
+} */
+
+#text-container:hover #add-icon {
+    display: block;
+}
+
+#add-icon {
+    position: absolute;
+    right: 5%;
+    background-color: var(--background-color);
+    display: none;
+}
+
+#add-icon button {
+    background-color: var(--background-color);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--off-text-color);
+}
+
+#add-icon button:hover {
+    color: var(--main-text-color);
+}
+
+/* button styling - buttons to manage the tasks*/
+
+.btn {
+    background-color: var(--background-container-color);
+    color: var(--off-text-color);
+    border-style: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.btn:hover {
+    color: var(--main-text-color);
+}
+
+/* Tasks manager */
+
+#tasks-manager {
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    justify-content: space-between;
+}
+
+/* Tasks container - to list all the tasks*/
+
+#tasks-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 40vh;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+#tasks-container::-webkit-scrollbar {
+    display: none;
+}
+
+.task {
+    padding: 0.4rem;
+    width: 97%;
+    height: 5vh;
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.task-name {
+    width: 95%;
+}
+
+.remove-btn {
+    display: none;
+    cursor: pointer;
+    color: var(--off-text-color);
+}
+
+.remove-btn:hover {
+    color: var(--main-text-color);
+}
+
+.task:hover .remove-btn {
+    display: block;
+}
+
+.task:hover {
+    border-left: 4px solid rgb(186, 186, 186);
+}
+
+.task input:checked+span {
+    text-decoration: line-through;
+    color: var(--off-text-color);
+}
+
+.task span {
+    margin-left: 2%;
+}
+
+/* Tasks footer - additional info and filtering */
+
+#tasks-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    padding-bottom: 2%;
+}
+
+#task-num {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--off-text-color);
+    font-weight: 600;
+}
+
+#task-num span {
+    color: var(--main-text-color);
+}
+
+#filter {
+    display: flex;
+}
+
+/* Media queries */
+@media only screen and (max-width: 768px) {
+    #main-container {
+        width: 90%;
+    }
+}

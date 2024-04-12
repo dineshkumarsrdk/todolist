@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://kit.fontawesome.com/b3348ae33f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <!-- <i class="fa-solid fa-moon"></i> Dark mode -->
+        <i class="fa-solid fa-sun"></i> Light mode
+    </nav>
+    <div id="main-container">
+        <div id="text-container">
+            <div id="text-icon">
+                <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <div id="text-input">
+                <input type="text" placeholder="Type your todo">
+            </div>
+            <div id="add-icon">
+                <button type="button"><i class="fa-regular fa-square-plus"></i></button>
+            </div>
+        </div>
+        <div id="tasks-manager">
+            <button class="btn" type="button"><i class="fa-regular fa-square-check"></i> Complete all tasks</button>
+            <button class="btn" type="button"><i class="fa-regular fa-rectangle-xmark"></i> Clear completed tasks</button>
+        </div>
+        <div id="tasks-container">
+            <!-- <div class="task-name">
+                <input type="checkbox" checked>
+                <span id="task-content">${task.taskName}</span>
+            </div>
+            <div class="remove-btn">
+                <i class="fa-regular fa-square-minus"></i>
+            </div> -->
+        </div>
+        <div id="tasks-footer">
+            <div id="task-num">
+                <span>0</span> task(s) left
+            </div>
+            <div id="filter">
+                <button class="btn" type="button">All</button>
+                <button class="btn" type="button">Uncomplete</button>
+                <button class="btn" type="button">Completed</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
