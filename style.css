@@ -238,4 +238,7 @@ nav i {
     #main-container {
         width: 90%;
     }
+    .remove-btn {
+        display: block;
+    }
 }
